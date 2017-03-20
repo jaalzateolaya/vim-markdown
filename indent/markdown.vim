@@ -2,7 +2,6 @@ if exists("b:did_indent") | finish | endif
 let b:did_indent = 1
 
 setlocal indentexpr=GetMarkdownIndent()
-setlocal nolisp
 setlocal autoindent
 
 " Automatically continue blockquote on line break
