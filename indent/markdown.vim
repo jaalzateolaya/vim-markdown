@@ -2,7 +2,14 @@ setlocal indentexpr=GetMarkdownIndent()
 setlocal autoindent
 
 " Automatically continue blockquote on line break
-setlocal comments+=b:>
+setlocal formatoptions+=r
+setlocal comments=b:>
+if get(g:, "vim_markdown_auto_insert_bullets", 1)
+    " Do not automatically insert bullets when auto-wrapping with text-width
+    setlocal formatoptions-=c
+    " Accept various markers as bullets
+    setlocal comments+=b:*,b:+,b:-
+endif
 
 setlocal formatlistpat=^\\s*[-\\d+*]\\+[]:.)}\\t\ ]\\s*
 
