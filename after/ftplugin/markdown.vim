@@ -184,10 +184,8 @@ function! s:MarkdownSetupFolding()
 endfunction
 
 function! s:MarkdownSetupFoldLevel()
-    if get(g:, 'vim_markdown_folding_style_pythonic', 0)
-        " set default foldlevel
-        execute 'setlocal foldlevel='.s:vim_markdown_folding_level
-    endif
+    " set default foldlevel
+    execute 'setlocal foldlevel='.s:vim_markdown_folding_level
 endfunction
 
 call s:MarkdownSetupFoldLevel()
